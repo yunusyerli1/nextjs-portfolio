@@ -1,4 +1,3 @@
-'use client';
 import { Briefcase, Mail, Linkedin, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -32,7 +31,7 @@ export default function HomePage() {
           </p>
           <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
             Senior Frontend Developer / Software Engineer eager to continue growing his 6 years experience and skills.
-            Has significant experience with Angular, JavaScript, HTML, CSS and more. Skilled in creating responsive web applications, integrating third-party software, and implementing SEO strategies.
+            Has significant experience with <b>Angular, React, Next.js, JavaScript, TypeScript, HTML, CSS and more.</b>  Skilled in creating responsive web applications, integrating third-party software, and implementing SEO strategies.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center md:justify-start">
             <Link href="/experience" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center">
@@ -45,12 +44,13 @@ export default function HomePage() {
 
       <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-gray-900">
         <Image
-          src="/yunusyerli.jpg"
-          alt="Yunus Yerli"
-          className="absolute inset-0 w-full h-full object-cover opacity-70"
-          width={3800}
-          height={5700}
-        />
+        src="/yunusyerli.jpg"
+        alt="Yunus Yerli"
+        layout="fill" 
+        objectFit="cover"
+        priority={true} 
+        className="opacity-70"
+      />
       </div>
     </section>
   );

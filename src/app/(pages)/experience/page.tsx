@@ -17,7 +17,7 @@ export default function Experience() {
           'Contributed to open-source development, bug fixes, and enhancements for SuiteCRM.',
           'Conducting code reviews, providing feedback to ensure clean and well-documented code.',
         ],
-        technologies: ['Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'RxJs', 'Bootstrap', 'PHP', 'Symfony', 'Docker', 'Git', 'Agile'],
+        technologies: ['Angular', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'SCSS', 'RxJs', 'Bootstrap', 'PrimeNg', 'Material UI', 'GraphQL', 'PHP', 'Symfony', 'Twig', 'Ngx', 'Docker', 'Git', 'Agile'],
       },
       {
         title: 'Frontend Developer',
@@ -31,7 +31,7 @@ export default function Experience() {
           'Designed and implemented SEO strategies for user acquisition.',
           'Created complex generic UI components.',
         ],
-        technologies: ['Angular', 'TypeScript', 'JavaScript', 'CSS', 'SASS', 'HTML', 'RxJs', 'Bootstrap', 'Websocket', 'TailwindCSS', 'Git', 'SEO', 'Branding', 'UI Components', 'Agile'],
+        technologies: ['Angular', 'TypeScript', 'JavaScript', 'CSS', 'SASS', 'HTML', 'RxJs', 'NgRx', 'Bootstrap', 'Websocket', 'TailwindCSS', 'NodeJs', 'NestJs', 'Rest Api', 'Git', 'SEO',],
       },
       {
         title: 'Frontend Developer',
@@ -45,7 +45,7 @@ export default function Experience() {
           'Validated 100% of user input before submitting to the back-end.',
           'Implementing features that follow the best practices with React.',
         ],
-        technologies: ['JavaScript', 'CSS', 'HTML', 'React', 'Bootstrap', 'Git', 'SEO', 'Agile'],
+        technologies: ['React', 'NextJs', 'JavaScript', 'HTML', 'CSS', 'SASS', 'Bootstrap', 'Git', 'SEO'],
       },
       {
         title: 'Digital Marketing Expert',
@@ -74,27 +74,28 @@ export default function Experience() {
         technologies: ['Project Management'],
       },
     ];
-  
+
     const education = [
       {
         degree: 'Bachelor of Science, Computer Engineering',
         institution: 'Turkish Air Force College',
-        dates: 'Dates not specified in CV',
+        dates: '2012',
       }
     ];
-  
+
     return (
       <section id="experience" className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
-  
+          <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">My Career</h2>
+
           <h3 className="text-3xl font-bold text-center mb-8 text-gray-200">Professional Experience</h3>
-          <div className="grid grid-cols-1 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 mb-16"> {/* Changed to responsive 2-column grid */}
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
           </div>
-  
-          <h3 className="text-3xl font-bold text-center mb-8 text-gray-200">Education and Training</h3>
+
+          <h3 className="text-3xl font-bold text-center mb-8 text-gray-200">Education</h3>
           <div className="grid grid-cols-1 gap-8">
             {education.map((edu, index) => (
               <div key={index} className="bg-gray-800 p-8 rounded-lg shadow-md border border-gray-700">
@@ -115,4 +116,4 @@ export default function Experience() {
         </div>
       </section>
     );
-  };
+};

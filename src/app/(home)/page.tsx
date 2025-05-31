@@ -37,13 +37,13 @@ export default function HomePage() {
         </p>
         <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center md:justify-start">
           <button
-            onClick={() => console.log('Portfolio button clicked')} // Placeholder for action
+            onClick={() => console.log('Portfolio button clicked')}
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
           >
             <Briefcase className="w-5 h-5 mr-2" /> Portfolio
           </button>
           <button
-            onClick={() => console.log('Contact button clicked')} // Placeholder for action
+            onClick={() => console.log('Contact button clicked')}
             className="border-2 border-blue-600 text-blue-400 hover:bg-blue-600 hover:text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
           >
             <Mail className="w-5 h-5 mr-2" /> Contact Me

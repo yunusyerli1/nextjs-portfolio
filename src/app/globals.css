@@ -22,7 +22,7 @@
 
 html {
   scroll-behavior: smooth;
-  overflow: hidden; /* Prevent scrolling */
+  /* overflow: hidden; */
 }
 
 body {
@@ -33,5 +33,5 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #000000; /* Ensure a black background */
-  overflow: hidden; /* Prevent scrolling */
+  /* overflow: hidden; */
 }

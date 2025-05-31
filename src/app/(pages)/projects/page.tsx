@@ -1,7 +1,16 @@
 import ProjectCard from "../../_components/project-card";
 
+interface Project {
+    title: string;
+    description: string;
+    technologies: string[];
+    imageUrl: string;
+    liveLink: string;
+    githubLink: string;
+}
+
 export default function Projects() {
-    const projects = [
+    const projects: Project[] = [
       {
         title: 'E-commerce Platform',
         description: 'A full-stack e-commerce application with user authentication, product listings, cart functionality, and payment integration.',

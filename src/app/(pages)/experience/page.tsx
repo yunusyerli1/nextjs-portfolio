@@ -86,7 +86,6 @@ export default function Experience() {
     return (
       <section id="experience" className="py-20 bg-gray-900 text-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">Professional Journey</h2>
   
           <h3 className="text-3xl font-bold text-center mb-8 text-gray-200">Professional Experience</h3>
           <div className="grid grid-cols-1 gap-8 mb-16">

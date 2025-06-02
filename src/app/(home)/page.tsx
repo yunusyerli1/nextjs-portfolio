@@ -11,7 +11,7 @@ export default function HomePage() {
 
         <div className="max-w-2xl mx-auto md:mx-0 md:ml-20 lg:ml-24 mt-10 md:mt-0 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white">
-            I'm <span className="text-blue-400">Yunus Yerli</span>
+            I&apos;m <span className="text-blue-400">Yunus Yerli</span>
           </h1>
           <p className="text-2xl md:text-4xl text-gray-300 mb-6 font-semibold">
             Senior Frontend Developer

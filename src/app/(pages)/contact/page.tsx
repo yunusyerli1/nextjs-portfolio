@@ -1,8 +1,8 @@
 'use client';
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { useState } from "react";
+import * as z from 'zod';
 import { AlertCircle, AtSign, CheckCircle, Send } from "lucide-react";
 import supabase from '../../../config/supabaseClient';
 
@@ -13,27 +13,29 @@ const contactFormSchema = z.object({
   message: z.string().min(20, { message: 'Message is required.' }).max(1000, { message: 'Message is too long.' }),
 });
 
+type ContactFormData = z.infer<typeof contactFormSchema>;
+
 export default function Contact() {
     const {
       register,
       handleSubmit,
       reset,
-      formState: { errors, isSubmitting, isSubmitSuccessful },
+      formState: { errors, isSubmitting }
     } = useForm({
       resolver: zodResolver(contactFormSchema),
     });
   
     const [formStatus, setFormStatus] = useState('');
   
-    const onSubmit = async (values: any) => {
+    const onSubmit = async (values: ContactFormData) => {
       setFormStatus(''); 
       try {
-        const { data, error } = await supabase
+        const { data, error: _error } = await supabase
         .from('contact')
         .insert([values])
         .select();
 
-        if (error) {
+        if (_error) {
           setFormStatus('error');
           return; 
         }
@@ -46,8 +48,8 @@ export default function Contact() {
           return; 
         }
 
-        
       } catch (error) {
+        console.error("Supabase insert error:", error);
         setFormStatus('error');
       }
     };

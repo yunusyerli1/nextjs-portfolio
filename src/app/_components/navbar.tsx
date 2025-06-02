@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import {
-  Home, User, Briefcase, Mail, Menu, X
+  Home, User, Briefcase, Mail, Menu, X,
+  House
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,7 +25,8 @@ export default function Navbar() {
     <nav className="fixed w-full z-50 bg-black bg-opacity-90 backdrop-blur-sm shadow-lg border-b border-gray-800">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-white hover:text-blue-400 transition-colors duration-300">
-          YUNUS
+
+          <House className="w-8 h-8" />
         </Link>
 
         {/* Mobile & Desktop Hamburger Menu */}

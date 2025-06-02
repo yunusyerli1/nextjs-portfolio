@@ -22,14 +22,14 @@ export default function HomePage() {
           </a>
         </div>
 
-        <div className="max-w-2xl mx-auto md:mx-0 md:ml-20 lg:ml-24 text-center md:text-left">
+        <div className="max-w-2xl mx-auto md:mx-0 md:ml-20 lg:ml-24 mt-10 md:mt-0 text-center md:text-left">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight text-white">
             I'm <span className="text-blue-400">Yunus Yerli</span>
           </h1>
           <p className="text-2xl md:text-4xl text-gray-300 mb-6 font-semibold">
-            Badass Hacker
+            Senior Frontend Developer
           </p>
-          <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
+          <p className="text-lg md:text-xl text-gray-400 mb-8 mx-10 md:mx-2 max-w-lg">
             Senior Frontend Developer / Software Engineer eager to continue growing his 6 years experience and skills.
             Has significant experience with <b>Angular, React, Next.js, JavaScript, TypeScript, HTML, CSS and more.</b>  Skilled in creating responsive web applications, integrating third-party software, and implementing SEO strategies.
           </p>
@@ -46,10 +46,9 @@ export default function HomePage() {
         <Image
         src="/yunusyerli.jpg"
         alt="Yunus Yerli"
-        layout="fill" 
-        objectFit="cover"
         priority={true} 
-        className="opacity-70"
+        className="opacity-70 object-cover"
+        fill
       />
       </div>
     </section>

@@ -46,13 +46,11 @@ export default function Contact() {
             <p className="text-lg text-gray-300 text-center mb-8">
               Have a question, a project idea, or just want to connect? Feel free to reach out!
             </p>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-6 mb-8">
+            <div className="flex flex-row justify-center items-center gap-6 mb-8">
               <a href="mailto:yunusyerli1@gmail.com" className="flex items-center text-blue-400 hover:text-blue-500 transition-colors duration-300">
                 <AtSign className="w-6 h-6 mr-2" /> yunusyerli1@gmail.com
               </a>
-              <a href="tel:+905395858658" className="flex items-center text-blue-400 hover:text-blue-500 transition-colors duration-300">
-                <Phone className="w-6 h-6 mr-2" /> +90 539 585 86 58
-              </a>
+           
             </div>
   
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -14,8 +14,8 @@ export default function Footer() {
                     <a href="https://www.github.com/yunusyerli1" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300">
                         <Github className="w-7 h-7" />
                     </a>
-                    <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">
-                        <Twitter className="w-7 h-7" />
+                    <a href="mailto:yunusyerli1@gmail.com"  className="hover:text-red-500 hover:text-blue-400 transition-colors duration-300">
+                        <Mail className="w-7 h-7" />
                     </a>
                 </div>
                 <p className="text-sm">Designed and Built with ❤️</p>

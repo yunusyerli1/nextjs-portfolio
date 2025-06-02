@@ -28,8 +28,6 @@ export default function Navbar() {
 
           <House className="w-8 h-8" />
         </Link>
-
-        {/* Mobile & Desktop Hamburger Menu */}
         <div className="flex">
           <button 
             onClick={toggleMenu} 
@@ -39,8 +37,7 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Full-screen Overlay Navigation for Mobile & Desktop */}
+      
       {isOpen && (
         <div className="fixed inset-0 bg-opacity-100 z-40">
           <div className="absolute h-screen w-screen bg-black z-[10000] flex flex-col items-center justify-center space-y-8">

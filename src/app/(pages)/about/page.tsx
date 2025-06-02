@@ -1,7 +1,3 @@
-import { Code, Database, Lightbulb, Linkedin, Mail, Settings } from "lucide-react";
-
-import { Github } from "lucide-react";
-
 export default function About() {
     return (
     <section id="about" className="py-20 bg-gray-900 text-white">

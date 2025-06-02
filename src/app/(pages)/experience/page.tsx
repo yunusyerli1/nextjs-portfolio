@@ -1,4 +1,4 @@
-import { BookOpen, Briefcase, Calendar, GraduationCap } from "lucide-react";
+import { BookOpen, Calendar, GraduationCap } from "lucide-react";
 import Image from 'next/image';
 import ExperienceCard from "../../_components/experience-card";
 
@@ -94,19 +94,16 @@ export default function Experience() {
                 <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">My Career</h2>
 
                 <h3 className="text-3xl font-bold text-center mb-8 text-gray-200">Professional Experience</h3>
-                <div className="relative pl-12 md:pl-20"> {/* Added left padding for the timeline */}
+                <div className="relative pl-12 md:pl-20">
                     {experiences.map((exp, index) => (
                         <div key={index} className="mb-12 last:mb-0 relative">
-                            {/* Vertical Line */}
                             {index < experiences.length - 1 && (
                                 <div className="absolute left-2 md:left-6 top-0 h-full w-0.5 bg-gray-700"></div>
                             )}
-                            {/* Icon */}
                             <div className="absolute -left-2 md:left-0 -top-1 mt-1 flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded bg-white text-white z-10">
-                                {/* <Briefcase className="w-5 h-5 md:w-7 md:h-7" /> */}
                                 <Image src={exp.logo} alt={exp.company} fill className="object-contain"  sizes="(max-width: 768px) 32px, 48px"/>
                             </div>
-                            <div className="ml-8 md:ml-16"> {/* Adjusted margin to align with icon */}
+                            <div className="ml-8 md:ml-16"> 
                                 <ExperienceCard {...exp} />
                             </div>
                         </div>
@@ -114,18 +111,16 @@ export default function Experience() {
                 </div>
 
                 <h3 className="text-3xl font-bold text-center my-8 text-gray-200">Education</h3>
-                <div className="relative pl-12 md:pl-20"> {/* Added left padding for the timeline */}
+                <div className="relative pl-12 md:pl-20"> 
                     {education.map((edu, index) => (
                         <div key={index} className="mb-12 last:mb-0 relative">
-                            {/* Vertical Line */}
                             {index < education.length - 1 && (
                                 <div className="absolute left-4 md:left-6 top-0 h-full w-0.5 bg-gray-700"></div>
                             )}
-                            {/* Icon */}
                             <div className="absolute -left-2 md:left-0 -top-1 mt-4 md:mt-0 flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full bg-purple-500 text-white z-10">
                                 <GraduationCap className="w-5 h-5 md:w-7 md:h-7" />
                             </div>
-                            <div className="ml-8 md:ml-16"> {/* Adjusted margin to align with icon */}
+                            <div className="ml-8 md:ml-16"> 
                                 <div className="bg-gray-800 p-8 rounded-lg shadow-md border border-gray-700">
                                     <h3 className="text-2xl font-bold text-blue-400 mb-2 flex items-center">
                                         {edu.degree}

@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useState } from "react";
-import { AlertCircle, AtSign, CheckCircle, Phone, Send } from "lucide-react";
+import { AlertCircle, AtSign, CheckCircle, Send } from "lucide-react";
+import supabase from '../../../config/supabaseClient';
 
 const contactFormSchema = z.object({
-  name: z.string().min(1, { message: 'Name is required.' }).max(100, { message: 'Name is too long.' }),
+  name: z.string().min(3, { message: 'Name is required.' }).max(100, { message: 'Name is too long.' }),
   email: z.string().email({ message: 'Invalid email address.' }),
-  subject: z.string().min(1, { message: 'Subject is required.' }).max(200, { message: 'Subject is too long.' }),
-  message: z.string().min(1, { message: 'Message is required.' }).max(1000, { message: 'Message is too long.' }),
+  subject: z.string().min(4, { message: 'Subject is required.' }).max(200, { message: 'Subject is too long.' }),
+  message: z.string().min(20, { message: 'Message is required.' }).max(1000, { message: 'Message is too long.' }),
 });
 
 export default function Contact() {
@@ -22,18 +23,31 @@ export default function Contact() {
       resolver: zodResolver(contactFormSchema),
     });
   
-    const [formStatus, setFormStatus] = useState(''); // 'success' or 'error'
+    const [formStatus, setFormStatus] = useState('');
   
-    const onSubmit = async (data: any) => {
+    const onSubmit = async (values: any) => {
       setFormStatus(''); 
       try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log('Form data submitted:', data);
-        setFormStatus('success');
-        reset(); // Clear form fields on successful submission
+        const { data, error } = await supabase
+        .from('contact')
+        .insert([values])
+        .select();
+
+        if (error) {
+          setFormStatus('error');
+          return; 
+        }
+
+        if(data.length) {
+          setFormStatus('success');
+          reset();
+        } else {
+          setFormStatus('error');
+          return; 
+        }
+
+        
       } catch (error) {
-        console.error('Form submission error:', error);
         setFormStatus('error');
       }
     };

@@ -1,6 +1,28 @@
 import { BookOpen, Calendar, GraduationCap } from "lucide-react";
 import Image from 'next/image';
 import ExperienceCard from "../../_components/experience-card";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Yunus Yerli\'s Professional Experience | Frontend Development Portfolio',
+  description: 'Explore the 6+ years of professional experience of Yunus Yerli, Senior Frontend Engineer, in web development with Angular, React, and Next.js.',
+  keywords: ['Frontend experience', 'Web development career', 'Senior developer portfolio', 'Angular experience', 'React experience', 'Next.js experience', 'Yunus Yerli work history'],
+  openGraph: {
+    title: 'Yunus Yerli\'s Experience | Frontend Development',
+    description: 'Detailed professional experience of Yunus Yerli in building scalable and performant frontend applications.',
+    url: 'https://yunusyerli.com/experience',
+    siteName: 'Yunus Yerli - Portfolio',
+    images: [
+      {
+        url: 'https://yunusyerli.com/yunusyerli.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Yunus Yerli - Professional Experience',
+      },
+    ],
+    type: 'website',
+  }
+};
 
 export default function Experience() {
     const experiences = [

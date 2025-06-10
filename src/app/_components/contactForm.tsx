@@ -33,21 +33,14 @@ export default function ContactForm() {
         const { data, error: _error } = await supabase
         .from('contact')
         .insert([values])
-        .select();
 
         if (_error) {
           setFormStatus('error');
           return; 
-        }
-
-        if(data.length) {
-          setFormStatus('success');
-          reset();
         } else {
-          setFormStatus('error');
-          return; 
+          setFormStatus('success');
+          reset(); 
         }
-
       } catch (error) {
         console.error("Supabase insert error:", error);
         setFormStatus('error');

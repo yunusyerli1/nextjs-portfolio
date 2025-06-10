@@ -30,7 +30,7 @@ export default function ContactForm() {
     const onSubmit = async (values: ContactFormData) => {
       setFormStatus(''); 
       try {
-        const { data, error: _error } = await supabase
+        const { error: _error } = await supabase
         .from('contact')
         .insert([values])
 

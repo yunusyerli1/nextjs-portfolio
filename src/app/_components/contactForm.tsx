@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { AlertCircle, CheckCircle, Send } from "lucide-react";
 import supabase from '../../config/supabaseClient';
+import { contactService } from "../../../api/contact/contact";
 
 const contactFormSchema = z.object({
   name: z.string().min(3, { message: 'Name is required.' }).max(100, { message: 'Name is too long.' }),
@@ -30,19 +31,21 @@ export default function ContactForm() {
     const onSubmit = async (values: ContactFormData) => {
       setFormStatus(''); 
       try {
-        const { error: _error } = await supabase
-        .from('contact')
-        .insert([values])
+        // const { error: _error } = await supabase
+        // .from('contact')
+        // .insert([values])
 
-        if (_error) {
-          setFormStatus('error');
-          return; 
-        } else {
-          setFormStatus('success');
-          reset(); 
-        }
+        const response = await contactService.createContact(values);
+
+        // if (_error) {
+        //   setFormStatus('error');
+        //   return; 
+        // } else {
+        //   setFormStatus('success');
+        //   reset(); 
+        // }
       } catch (error) {
-        console.error("Supabase insert error:", error);
+        console.error("Contact API error:", error);
         setFormStatus('error');
       }
     };

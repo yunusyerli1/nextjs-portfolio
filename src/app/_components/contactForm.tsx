@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { AlertCircle, CheckCircle, Send } from "lucide-react";
-import supabase from '../../config/supabaseClient';
 import { contactService } from "../../../api/contact/contact";
 
 const contactFormSchema = z.object({
@@ -20,7 +19,6 @@ export default function ContactForm() {
     const {
       register,
       handleSubmit,
-      reset,
       formState: { errors, isSubmitting }
     } = useForm({
       resolver: zodResolver(contactFormSchema),
@@ -35,7 +33,7 @@ export default function ContactForm() {
         // .from('contact')
         // .insert([values])
 
-        const response = await contactService.createContact(values);
+        await contactService.createContact(values);
 
         // if (_error) {
         //   setFormStatus('error');
